@@ -1,11 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Exercise 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercis2</title>
+    <script>
+        function insert(num) {
+            document.form.text.value = document.form.text.value + num
+        }
+
+
+        function clean() {
+            document.form.text.value = "";
+        }
+
+        function equal() {
+            let value = document.form.text.value
+            if (value) {
+                document.form.text.value = eval(value)
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            margin-top: 50px;
+            background-image: linear-gradient(90deg, red, blue);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: aliceblue;
+
+        }
+
+        .box {
+            text-align: center;
+            border-style: solid;
+            border-width: 10px;
+            border-radius: 20px;
+            border-color: rgb(54, 53, 54);
+            background-color: rgb(54, 53, 54);
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .button {
+            text-align: center;
+            background-image: linear-gradient(-50deg, black, gray);
+            color: rgb(45, 199, 199);
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            margin: 1px;
+            cursor: pointer;
+        }
+
+        .text {
+            width: 195px;
+            margin: 5px;
+            font-size: 25px;
+            padding: 5px;
+            color: aqua;
+        }
+
+        input {
+            background-image: linear-gradient(-50deg, black, gray);
+        }
+    </style>
 </head>
+
 <body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+    <div class="box">
+        <h1>Calculator</h1>
+
+        <form name="form">
+            <input type="text" class="text" name="text">
+        </form>
+        <table class="tab">
+            <tr>
+                <td><input class="button" type="button" value="AC" onclick="clean()" )></td>
+                <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
+                <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
+                <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
+                <td><input class="button" type="button" value="x" onclick="insert('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+                <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+                <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+            </tr>
+            <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+            <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
+            <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
+            <td><input class="button" type="button" value="=" onclick="equal()"></td>
+        </table>
+    </div>
+    </div>
 </body>
+
 </html>
